@@ -1,0 +1,309 @@
+<section class="content float-left">
+  <h1 class="top-summary shadow">
+    <span class="details">{{ fa-icon "map-marker" }} {{ type }}</span>
+    <span class="details detail-beds">
+      {{ fa-icon "map-marker" }} {{ bedrooms }} {{#if commercial}}rooms{{ else }}beds{{/if}}
+      </span>
+    <span class="details detail-bath">{{ fa-icon "map-marker" }} {{ bathrooms }} baths</span>
+    <span class="details">{{ fa-icon "map-marker" }} {{ sqft }} sqft</span>
+    <span class="price float-right">
+      {{ fa-icon "bookmark" }}
+      <strong>{{ format-number price }}</strong>
+      <span class="currency">AED{{#if rent}}/year{{/if}}</span>
+    </span>
+  </h1>
+  <div class="slideshow shadow position-relative">
+    <input name="anchor1" id="slide1" type="radio" class="anchor" autocomplete="off" checked>
+    <input name="anchor1" id="slide2" type="radio" class="anchor" autocomplete="off">
+    <input name="anchor1" id="slide3" type="radio" class="anchor" autocomplete="off">
+    <input name="anchor1" id="slide4" type="radio" class="anchor" autocomplete="off">
+    <input name="anchor1" id="slide5" type="radio" class="anchor" autocomplete="off">
+    <input name="anchor1" id="slide6" type="radio" class="anchor" autocomplete="off">
+    <input name="anchor1" id="slide7" type="radio" class="anchor" autocomplete="off">
+    <ul class="slide-image-list">
+      <div class="main-image"><img src="/assets/images/a.jpg"></div>
+      <li class="num1 img"><img src="/assets/images/a.jpg" alt="Image 1"></li>
+      <li class="num2 img"><img src="/assets/images/b.jpg" alt="Image 2"></li>
+      <li class="num3 img"><img src="/assets/images/c.jpg" alt="Image 3"></li>
+      <li class="num4 img"><img src="/assets/images/d.jpg" alt="Image 4"></li>
+      <li class="num5 img"><img src="/assets/images/e.jpg" alt="Image 5"></li>
+      <li class="num6 img"><img src="/assets/images/f.jpg" alt="Image 6"></li>
+      <li class="num7 img"><img src="/assets/images/g.jpg" alt="Image 7"></li>
+    </ul>
+    <div class="arrow-prev">
+      <label class="arrow-label num1" for="slide1">{{ fa-icon "chevron-left" }}</label>
+      <label class="arrow-label num2" for="slide2">{{ fa-icon "chevron-left" }}</label>
+      <label class="arrow-label num3" for="slide3">{{ fa-icon "chevron-left" }}</label>
+      <label class="arrow-label num4" for="slide4">{{ fa-icon "chevron-left" }}</label>
+      <label class="arrow-label num5" for="slide5">{{ fa-icon "chevron-left" }}</label>
+      <label class="arrow-label num6" for="slide6">{{ fa-icon "chevron-left" }}</label>
+      <label class="arrow-label num7" for="slide7">{{ fa-icon "chevron-left" }}</label>
+    </div>
+    <div class="arrow-next">
+      <label class="arrow-label num1" for="slide1">{{ fa-icon "chevron-right" }}</label>
+      <label class="arrow-label num2" for="slide2">{{ fa-icon "chevron-right" }}</label>
+      <label class="arrow-label num3" for="slide3">{{ fa-icon "chevron-right" }}</label>
+      <label class="arrow-label num4" for="slide4">{{ fa-icon "chevron-right" }}</label>
+      <label class="arrow-label num5" for="slide5">{{ fa-icon "chevron-right" }}</label>
+      <label class="arrow-label num6" for="slide6">{{ fa-icon "chevron-right" }}</label>
+      <label class="arrow-label num7" for="slide7">{{ fa-icon "chevron-right" }}</label>
+    </div>
+    <div class="thumbs-wrapper">
+      <label class="thumb-label num1" for="slide1">
+        <span class="thumb"><img src="/assets/images/a.jpg" alt="Image 1"></span>
+      </label>
+      <label class="thumb-label num2" for="slide2">
+        <span class="thumb"><img src="/assets/images/b.jpg" alt="Image 2"></span>
+      </label>
+      <label class="thumb-label num3" for="slide3">
+        <span class="thumb"><img src="/assets/images/c.jpg" alt="Image 3"></span>
+      </label>
+      <label class="thumb-label num4" for="slide4">
+        <span class="thumb"><img src="/assets/images/d.jpg" alt="Image 4"></span>
+      </label>
+      <label class="thumb-label num5" for="slide5">
+        <span class="thumb"><img src="/assets/images/e.jpg" alt="Image 5"></span>
+      </label>
+      <label class="thumb-label num6" for="slide6">
+        <span class="thumb"><img src="/assets/images/f.jpg" alt="Image 6"></span>
+      </label>
+      <label class="thumb-label num7" for="slide7">
+        <span class="thumb"><img src="/assets/images/g.jpg" alt="Image 7"></span>
+      </label>
+    </div>
+  </div>
+  <div class="description position-relative shadow">
+    <h3 class="title-outside thin-grey">PROPERTY DESCRIPTION</h3>
+    <span class="ref">{{ reference }}</span>
+    <span class="location thin-grey">{{ location }}</span>
+    <h2 class="desc-title">{{ title }}</h2>
+    {{{ description }}}
+    <div class="summary">
+      <h3 class="thin-grey">LISTING SUMMARY</h3>
+      <table class="summary-table">
+        <thead class="separation-line thin-grey">
+          <tr>
+            <th>Reference</th>
+            <th>Type</th>
+            <th>City</th>
+            <th>Community</th>
+          </tr>
+        </thead>
+        <tbody class="bold">
+          <tr>
+            <td>{{ reference }}</td>
+            <td>{{ type }}</td>
+            <td>{{ city }}</td>
+            <td>{{ community }}</td>
+          </tr>
+        </tbody>
+        <thead class="separation-line thin-grey">
+          <tr>
+            <th>Subcommunity</th>
+            <th>Property</th>
+            <th>Sqft</th>
+            <th>{{#if commercial}}Rooms{{ else }}Bedrooms{{/if}}</th>
+          </tr>
+        </thead>
+        <tbody class="bold">
+          <tr>
+            <td>{{ subcommunity }}</td>
+            <td>{{ property }}</td>
+            <td>{{ format-number sqft }} sqft</td>
+            <td>{{ bedrooms }}</td>
+          </tr>
+        </tbody>
+        <thead class="separation-line thin-grey">
+          <tr>
+            <th>Bathrooms</th>
+            <th>Price</th>
+            <th>Price/sqft</th>
+            <th>Last Update</th>
+          </tr>
+        </thead>
+        <tbody class="bold">
+          <tr>
+            <td>{{ bathrooms }}</td>
+            <td>AED {{ format-number price }}</td>
+            <td>AED {{ divide-number price sqft }} /sqft</td>
+            <td>{{ updatedDate }}</td>
+          </tr>
+        </tbody>
+        {{!-- this method requires some data replication in the template, but the result is nice --}}
+        <thead class="separation-line thin-grey responsive-cell">
+          <tr>
+            <th>Community</th>
+            <th>{{#if commercial}}Rooms{{ else }}Bedrooms{{/if}}</th>
+            <th>Last Update</th>
+          </tr>
+        </thead>
+        <tbody class="bold responsive-cell">
+          <tr>
+            <td>{{ community }}</td>
+            <td>{{ bedrooms }}</td>
+            <td>{{ updatedDate }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<aside class="sidebar float-right">
+  <section class="agent shadow">
+    <img class="a-pic" src="/assets/images/agent.jpg" alt="Jennifer Doe">
+    <p class="a-name">Jennifer Doe</p>
+    <p class="a-details">The Reserve Agency LLC</p>
+    <p class="a-details">Emaar Square</p>
+    <p class="a-details">Downtown, Dubai, UAE</p>
+    <img class="a-company" src="/assets/images/company.jpg" alt="Land Sterling">
+  </section>
+  <section class="contact accordion">
+    <dl>
+      <dt>{{#view "accordion-title"}}{{ fa-icon "th" }} CONTACT BY PHONE{{/view}}</dt>
+      <dd class="accordion-item accordion-item-collapsed">
+        <p class="phone-number">055 123 4567</p>
+      </dd>
+      <dt>{{#view "accordion-title"}}{{ fa-icon "envelope" }} CONTACT BY EMAIL{{/view}}</dt>
+      <dd class="accordion-item accordion-item-collapsed">
+        <form class="accordion-form" {{ action "sendEmail" on="submit" }}>
+          {{ textarea name="message"
+                      id="message"
+                      placeholder="Type your message to the agent"
+                      class="full-width"
+                      cols="35"
+                      rows="8" }}
+          {{ input name="name" id="name" placeholder="Full Name" class="full-width" }}
+          {{ input name="email" id="email" placeholder="Email Address" class="full-width" }}
+          {{ input name="phone" id="phone" placeholder="Phone Number" class="full-width" }}
+          {{ input type="submit" placeholder="SEND" value="SEND" class="submit-btn" }}
+        </form>
+      </dd>
+      <dt>{{#view "accordion-title"}}{{ fa-icon "edit" }} MAKE AN OFFER{{/view}}</dt>
+      <dd class="accordion-item accordion-item-collapsed">
+        <form class="accordion-form" {{ action "makeOffer" on="submit" }}>
+          <h2>Your Offer</h2>
+          <div class="offer">
+            {{ input name="offer" id="offer" class="full-width" }}
+          </div>
+          <span class="small-text">
+            only serious and reasonable offers will be considered by the broker
+          </span>
+          {{ input name="o-name" id="o-name" placeholder="Full Name" class="full-width" }}
+          {{ input name="o-email" id="o-email" placeholder="Email Address" class="full-width" }}
+          {{ input name="o-phone" id="o-phone" placeholder="Phone Number" class="full-width" }}
+          {{ input type="o-submit" placeholder="SEND" value="SEND" class="submit-btn" }}
+        </form>
+      </dd>
+    </dl>
+  </section>
+  <section class="advertisement position-relative">
+    <h3 class="title-outside thin-grey">ADVERTISEMENT</h3>
+    <div class="g-ad" id="div-gpt-ad-1416472671796-0">
+      <script>
+        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1416472671796-0'); });
+      </script>
+    </div>
+    {{ partial "loading" }}
+  </section>
+  <section class="actions shadow">
+    <ul class="action-list">
+      <li {{ bind-attr class=":action-item favorite:favorited" }}>
+        <a class="action-link" {{ action "favorite" this }}>
+          {{ fa-icon "star" }} FAVORITE THIS PROPERTY
+        </a>
+      </li>
+      <li  class="action-item">
+        <a class="action-link">{{ fa-icon "file" }} PRINT DETAILS IN PDF</a>
+      </li>
+      <li  class="action-item">
+        <a class="action-link">{{ fa-icon "user" }} EMAIL TO A FRIEND</a>
+      </li>
+      <li  class="action-item">
+        <a class="action-link">{{ fa-icon "facebook" }} SHARE ON FACEBOOK</a>
+      </li>
+    </ul>
+  </section>
+  <section class="market-price shadow position-relative">
+    <h3 class="title-outside thin-grey">
+      {{ fa-icon "signal" }} MARKET PRICE
+      <strong>LIVE</strong>
+    </h3>
+    <dl class="market-list">
+      <dd class="market-item">PRICE BASED ON</dd>
+      <dt class="market-data">60 similar listings</dt>
+      <dd class="market-item">AVERAGE PRICE</dd>
+      <dt class="market-data">AED/year 177,583</dt>
+      <dd class="market-item">AVERAGE SQFT</dd>
+      <dt class="market-data">1,933 sqft</dt>
+      <dd class="market-item">AVERAGE PRICE/SQFT</dd>
+      <dt class="market-data">AED/year 92 per sqft</dt>
+    </dl>
+    <a class="read-more float-right">READ MORE</a>
+  </section>
+</aside>
+<div class="clear"></div>
+<section class="related position-relative clearfix">
+  <h2 class="related-title title-outside thin-grey">
+    {{ fa-icon "suitcase" }}
+    PEOPLE ALSO CHECKED THESE PROPERTIES OUT
+  </h2>
+  <div class="related-properties shadow">
+    <a>
+      <img src="/assets/images/a-small.jpg" alt="Property 1">
+      <h3>Dubai Sports City</h3>
+      <span class="related-price">
+        <strong>{{ fa-icon "bookmark" }} 58,000</strong> AED/year
+      </span>
+    </a>
+  </div>
+  <div class="related-properties shadow">
+    <a>
+      <img src="/assets/images/a-small.jpg" alt="Property 1">
+      <h3>Dubai Sports City</h3>
+      <span class="related-price">
+        <strong>{{ fa-icon "bookmark" }} 58,000</strong> AED/year
+      </span>
+    </a>
+  </div>
+  <div class="related-properties shadow">
+    <a>
+      <img src="/assets/images/a-small.jpg" alt="Property 1">
+      <h3>Dubai Sports City</h3>
+      <span class="related-price">
+        <strong>{{ fa-icon "bookmark" }} 58,000</strong> AED/year
+      </span>
+    </a>
+  </div>
+  <div class="related-properties shadow">
+    <a>
+      <img src="/assets/images/a-small.jpg" alt="Property 1">
+      <h3>Dubai Sports City</h3>
+      <span class="related-price">
+        <strong>{{ fa-icon "bookmark" }} 58,000</strong> AED/year
+      </span>
+    </a>
+  </div>
+  <div class="related-properties shadow">
+    <a>
+      <img src="/assets/images/a-small.jpg" alt="Property 1">
+      <h3>Dubai Sports City</h3>
+      <span class="related-price">
+        <strong>{{ fa-icon "bookmark" }} 58,000</strong> AED/year
+      </span>
+    </a>
+  </div>
+</section>
+<footer class="footer shadow">
+  <span class="details">{{ fa-icon "map-marker" }} {{ type }}</span>
+  <span class="details detail-beds">
+    {{ fa-icon "map-marker" }} {{ bedrooms }} {{#if commercial}}rooms{{ else }}beds{{/if}}
+  </span>
+  <span class="details detail-bath">{{ fa-icon "map-marker" }} {{ bathrooms }} baths</span>
+  <span class="details">{{ fa-icon "map-marker" }} {{ sqft }} sqft</span>
+  <span class="price float-right">
+    {{ fa-icon "bookmark" }}
+    <strong>{{ format-number price }}</strong>
+    <span class="currency">AED{{#if rent}}/year{{/if}}</span>
+  </span>
+</footer>

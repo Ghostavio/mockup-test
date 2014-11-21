@@ -6,6 +6,17 @@ module.exports = function(environment) {
     environment: environment,
     baseURL: '/',
     locationType: 'auto',
+    contentSecurityPolicy: {
+      'default-src': "'none'",
+      'script-src': "'self' 'unsafe-inline' 'unsafe-eval' www.google-analytics.com pagead2.googlesyndication.com securepubads.g.doubleclick.net pubads.g.doubleclick.net www.googletagservices.com partner.googleadservices.com www.gstatic.com publisherconsole.appspot.com",
+      'font-src': "'self' data:",
+      'connect-src': "'self'",
+      'img-src': "'self' www.google-analytics.com pagead2.googlesyndication.com tpc.googlesyndication.com csi.gstatic.com",
+      'style-src': "'self' 'unsafe-inline'",
+      'frame-src': "googleads.g.doubleclick.net tpc.googlesyndication.com",
+      'object-src': "'self' www.gstatic.com",
+      'report-uri': "report.gus.ninja"
+    },
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

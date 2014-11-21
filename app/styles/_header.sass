@@ -1,0 +1,154 @@
+.top-header
+  background-color: $cool-grey
+  height: $header-height
+  padding: 5px 2%
+  position: fixed
+  width: 100%
+  z-index: 999
+  +mq(min-width, $mq-smaller)
+    padding: 15px 2%
+  .header-wrapper
+    max-width: 1200px
+    margin: 0 auto
+  h1
+    font-size: 1rem
+    background-color: $grey
+    font-weight: 400
+    color: $warm-white
+    padding: 9px 8px 4px
+    margin-left: -5px
+    display: none
+    +mq(min-width, $mq-smaller)
+      display: inline-block
+    +mq(min-width, $mq-small)
+      font-size: 1.25rem
+      padding: 7px 8px 3px
+
+.logo-link
+  display: block
+  text-align: center
+  +mq(min-width, $mq-more-medium)
+      display: inline-block
+
+.logo
+  width: 50px
+  height: 50px
+  background-color: $creamson
+  display: inline-block
+  vertical-align: top
+  +mq(min-width, $mq-smaller)
+    width: 30px
+    height: 30px
+
+.menu
+  float: right
+  height: 60px
+  margin-top: -15px
+  padding-top: 15px
+  padding-right: 65px
+  transition: padding-right .5s ease-in-out
+  +mq(min-width, $mq-more-medium)
+    position: absolute
+    top: 0
+    right: 0
+  +mq(min-width, $mq-large)
+    padding-right: 0
+  .menu-list
+    list-style-type: none
+    margin: -15px 0
+    display: none
+    +mq(min-width, $mq-more-medium)
+      display: block
+    .menu-item
+      display: inline-block
+      color: $warm-white
+      border-right: 1px solid $menu-separation-lines
+      &.active, &:last-child
+        border-bottom: none
+        border-right: 1px solid transparent
+      &.active .menu-link, .menu-link:hover
+        background-color: $default-menu-color
+      &.active .buy-link, .buy-link:hover
+        background-color: $buy-color
+      &.active .rent-link, .rent-link:hover
+        background-color: $rent-color
+      &.active .commercial-link, .commercial-link:hover
+        background-color: $commercial-color
+      .menu-link
+        display: block
+        padding: 23px 8px 16px
+        border-bottom: 5px solid $default-menu-color
+        margin-left: -.3em
+        color: inherit
+        text-decoration: none
+        transition: all 80ms
+        cursor: pointer
+        &.buy-link
+          border-bottom: 5px solid $buy-color
+        &.rent-link
+          border-bottom: 5px solid $rent-color
+        &.commercial-link
+          border-bottom: 5px solid $commercial-color
+    &.show-menu
+      display: block
+      position: absolute
+      left: -18px
+      top: $header-height+10
+      background-color: $cool-grey
+      +mq(min-width, $mq-smaller)
+        top: $header-height
+      +mq(min-width, $mq-more-medium)
+        display: block
+        position: static
+        left: auto
+        top: auto
+        background-color: transparent
+      .menu-item
+        display: block
+        +mq(min-width, $mq-more-medium)
+          display: inline-block
+        .menu-link
+          margin-left: 0
+          padding-left: 20px
+          +mq(min-width, $mq-more-medium)
+            margin-left: -.3em
+            padding-left: 8px
+
+.toggle-menu-button, .toggle-sidebar-button
+  font-size: 2rem
+  padding: 7px 12px
+  border-radius: 8px
+  border: 1px solid $yet-another-grey
+  position: absolute
+  right: 0
+  top: 0
+  color: $warm-white
+  cursor: pointer
+  margin-right: 0
+  outline: 0
+  transition: background-color .5s ease-in-out
+  background-color: $buy-color
+  +mq(min-width, $mq-smaller)
+    top: -10px
+    padding: 5px 10px
+  +mq(min-width, $mq-more-medium)
+    top: 5px
+    padding: 5px 10px
+  +mq(min-width, $mq-large)
+    margin-right: -75px
+    padding: 5px 10px
+  .style-rent &
+    background-color: $rent-color
+  .style-commercial &
+    background-color: $commercial-color
+  .style-prestige &
+    background-color: $light-grey
+
+.toggle-menu-button
+  right: auto
+  top: 0
+  left: 0
+  +mq(min-width, $mq-smaller)
+    top: -10px
+  +mq(min-width, $mq-more-medium)
+    display: none

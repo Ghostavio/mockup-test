@@ -1,0 +1,397 @@
+$title-outside-distance: -25px
+$title-outside-margin-top: $big-section-spacing+($title-outside-distance*-1)
+.content
+  width: 100%
+  transition: width .6s ease-in-out
+  +mq(min-width, $mq-large)
+    width: 66%
+    transition: none
+  +mq(min-width, $mq-large+50)
+    width: 68%
+    transition: none
+  +mq(min-width, $mq-larger)
+    width: 70%
+    transition: none
+
+.title-outside, .ref
+  position: absolute
+  top: $title-outside-distance
+  font-size: .9rem
+  left: 0
+
+.sidebar
+  width: 300px
+  right: -350px
+  position: absolute
+  z-index: 1
+  transition: right .4s ease-in-out, background-color .4s ease-in-out .4s, padding .4s ease-in-out .4s, width .4s ease-in-out .4s
+  +mq(min-width, $mq-large)
+    position: static
+    right: 0
+    background-color: transparent
+    padding: 0
+  &.show-sidebar
+    right: 5px
+    background-color: $warm-white
+    padding: 20px 5px
+    width: 310px
+    transition: right .4s ease-in-out
+    z-index: 10
+    +mq(min-width, $mq-smaller)
+      padding: 20px 10px
+      width: 320px
+    +mq(min-width, $mq-small-small)
+      right: 10px
+      padding: 20px
+      width: 340px
+    +mq(min-width, $mq-extra-small)
+      right: 15px
+      padding: 20px
+    +mq(min-width, $mq-large)
+      position: static
+      right: 0
+      background-color: transparent
+      padding: 0
+      width: 300px
+
+.top-summary, .footer
+  background-color: $white
+  padding: 20px 10px
+  color: $text-grey
+  font-size: .9rem
+  font-weight: 400
+  +mq(min-width, $mq-smaller)
+    font-size: .9rem
+    padding: 20px 10px
+  +mq(min-width, $mq-another-small)
+    font-size: 1rem
+    padding: 20px 15px
+  +mq(min-width, $mq-not-so-small)
+    font-size: 1.15rem
+    padding: 20px
+  .details
+    margin: 0 6px
+    &:first-child
+      margin-left: 0
+    &.detail-bath
+      display: none
+      +mq(min-width, $mq-small-small)
+        display: inline
+    &.detail-beds
+      display: none
+      +mq(min-width, $mq-small)
+        display: inline
+  .price
+    transition: color .5s ease-in-out
+    .style-buy &
+      color: $buy-color
+    .style-rent &
+      color: $rent-color
+    .style-commercial &
+      color: $commercial-color
+    .style-prestige &
+      color: $light-grey
+  .fa-bookmark, .currency
+    color: $text-grey
+
+.footer
+  margin: $default-section-spacing 0 $default-section-spacing
+
+.agent
+  background-color: $white
+  padding: 15px
+  .a-pic
+    float: left
+    margin-right: 10px
+  .a-name
+    color: $cool-grey
+    line-height: 1.5em
+    font-size: 1rem
+  .a-details
+    color: $text-grey
+    line-height: 1.5em
+    font-size: .8rem
+  .a-company
+    margin-top: 5px
+
+.description
+  background-color: $white
+  margin-top: $title-outside-margin-top
+  padding: 30px 15px 15px
+  text-align: justify
+  .ref
+    left: auto
+    right: 0
+    transition: color .5s ease-in-out
+    .style-buy &
+      color: $buy-color
+    .style-rent &
+      color: $rent-color
+    .style-commercial &
+      color: $commercial-color
+    .style-prestige &
+      color: $light-grey
+    &:before
+      content: "REF: "
+      color: $text-grey
+  .location
+    display: block
+    margin-bottom: 12px
+    text-align: left
+    line-height: 1.5rem
+  .desc-title
+    color: $cool-grey
+    margin-bottom: 18px
+    font-weight: 400
+    font-size: 1.5rem
+    text-align: left
+    line-height: 2rem
+  p
+    color: $text-grey
+    line-height: 1.7rem
+    margin-bottom: .5rem
+  .summary
+    h3
+      font-size: 1rem
+      margin-top: 30px
+    .summary-table
+      width: 100%
+      line-height: 1.4rem
+      border-collapse: collapse
+      border-spacing: 0
+      font-size: .8rem
+      margin-top: 15px
+      text-align: left
+      +mq(min-width, $mq-small-small)
+        font-size: .85rem
+      +mq(min-width, $mq-another-small)
+        font-size: .9rem
+      .responsive-cell
+        +mq(min-width, $mq-another-small)
+          display: none
+      // here it comes some fancy stuff :P
+      thead:not(:last-child):not(.responsive-cell) th:last-child, tbody:not(:last-child):not(.responsive-cell) td:last-child
+        display: none
+        +mq(min-width, $mq-another-small)
+          display: table-cell
+      .separation-line
+        border-top: 1px solid $yet-another-grey
+      th
+        font-weight: 300
+        padding: 10px 0 0
+        width: 25%
+      td
+        color: $text-grey
+        padding: 0 0 8px
+      th, td
+        +mq(min-width, $mq-smaller)
+          padding-left: 5px
+          padding-right: 5px
+        &:first-child
+          padding-left: 0
+          +mq(min-width, $mq-smaller)
+            padding-left: 10px
+        &:last-child
+          padding-right: 0
+          +mq(min-width, $mq-smaller)
+            padding-right: 10px
+
+.advertisement
+  margin-top: $title-outside-margin-top
+  width: 300px
+  height: 250px
+  transition: background-color .5s ease-in-out
+  background-color: $buy-color
+  .g-ad
+    z-index: 3
+    position: absolute
+  .style-rent &
+    background-color: $rent-color
+  .style-commercial &
+    background-color: $commercial-color
+  .style-prestige &
+    background-color: $light-grey
+
+.actions
+  margin-top: $big-section-spacing
+  background-color: $white
+  padding: .6em 0
+  .action-item
+    list-style: none
+    margin: 0 .6em
+    border-bottom: 1px solid $yet-another-grey
+    &.favorited
+      & .fa-star
+        color: $dark-yellow
+        transform: rotate(70deg)
+      .action-link:hover
+        & .fa-star
+          color: $light-yellow
+    &:last-child
+      border-bottom: 0
+    .action-link
+      display: block
+      padding: 1.4em 0 1.4em 1em
+      cursor: pointer
+      text-decoration: none
+      transition: all .5s ease-in-out
+      color: $text-grey
+      font-size: .92rem
+      &:hover
+        color: $cool-grey
+        background-color: $yet-another-grey
+      & .fa
+        font-size: 1.35rem
+        margin-right: 25px
+      & .fa-star
+        transition: all .5s ease-in-out
+
+$market-button-spacing: 20px
+.market-price
+  background: $white
+  margin-top: $title-outside-margin-top
+  padding-bottom: 45px + $market-button-spacing
+  .market-item, .market-data
+    margin: 0 15px
+    font-weight: 300
+    line-height: 1.4rem
+  .market-item
+    padding-top: 1.3em
+    font-size: .8rem
+    &:first-child
+      padding-top: 1.1em
+    .style-buy &
+      color: $buy-color
+    .style-rent &
+      color: $rent-color
+    .style-commercial &
+      color: $commercial-color
+    .style-prestige &
+      color: $light-grey
+  .market-data
+    border-bottom: 1px solid $yet-another-grey
+    padding-bottom: .35em
+    color: $dark-grey
+  .read-more
+    right: 0
+    margin: $market-button-spacing 15px
+    padding: 8px 10px
+    color: $warm-white
+    border: 0
+    font-size: .8rem
+    cursor: pointer
+    background-color: $buy-color
+    .style-rent &
+      background-color: $rent-color
+    .style-commercial &
+      background-color: $commercial-color
+    .style-prestige &
+      background-color: $light-grey
+  & .fa
+    font-weight: 600
+    font-size: 1.2rem
+
+$normal-img-size: 175px
+$bigger-img-size: 195px
+.related
+  margin-top: $default-section-spacing
+  text-align: justify
+  height: 205px + $title-outside-margin-top - $default-section-spacing
+  overflow: hidden
+  +mq(max-width, $mq-another-small)
+    text-align: center
+  .related-title
+    top: 0
+  &:after
+    content: ""
+    display: inline-block
+    width: 100%
+  h2
+    width: 100%
+    text-align: center
+    font-size: .9rem
+    +mq(min-width, $mq-small)
+      font-size: 1rem
+    +mq(min-width, $mq-small-small)
+      font-size: 1.2rem
+    +mq(min-width, $mq-another-small)
+      font-size: 1.4rem
+    & .fa
+      font-size: 1rem
+      +mq(min-width, $mq-small)
+        font-size: 1.1rem
+      +mq(min-width, $mq-small-small)
+        font-size: 1.3rem
+      +mq(min-width, $mq-another-small)
+        font-size: 1.5rem
+  .related-properties
+    display: inline-block
+    width: $normal-img-size
+    height: 200px
+    text-align: center
+    background-color: $white
+    margin-top: $title-outside-margin-top - $default-section-spacing
+    margin-left: 10px
+    cursor: pointer
+    padding: 0 10px
+    // such a mess to make it look nice :(
+    +mq(max-width, $mq-smaller)
+      width: $bigger-img-size
+      margin-left: 0
+    +mq(min-width, $mq-small)
+      width: $bigger-img-size
+      margin-left: 30px
+    +mq(min-width, $mq-another-small)
+      width: $normal-img-size
+      margin-left: 10px
+    +mq(min-width, $mq-not-so-small)
+      width: $bigger-img-size
+      margin-left: 10px
+    +mq(min-width, $mq-extra-small)
+      width: $normal-img-size
+      margin-left: 10px
+    +mq(min-width, $mq-medium)
+      width: $bigger-img-size
+      margin-left: 10px
+    +mq(min-width, $mq-extra-medium)
+      width: $normal-img-size
+      margin-left: 10px
+    +mq(min-width, $mq-larger)
+      width: $bigger-img-size
+      margin-left: 10px
+    &:first-of-type
+      margin-left: 0
+    img
+      width: $normal-img-size
+      height: 135px
+      margin: 0 -10px
+      +mq(max-width, $mq-smaller)
+        width: $bigger-img-size
+      +mq(min-width, $mq-small)
+        width: $bigger-img-size
+      +mq(min-width, $mq-another-small)
+        width: $normal-img-size
+      +mq(min-width, $mq-not-so-small)
+        width: $bigger-img-size
+      +mq(min-width, $mq-extra-small)
+        width: $normal-img-size
+      +mq(min-width, $mq-medium)
+        width: $bigger-img-size
+      +mq(min-width, $mq-extra-medium)
+        width: $normal-img-size
+      +mq(min-width, $mq-larger)
+        width: $bigger-img-size
+    h3
+      color: $text-grey
+      border-bottom: 1px solid $yet-another-grey
+      margin: 7px 0
+    .related-price
+      transition: all .5s ease-in-out
+      .style-buy &
+        color: $buy-color
+      .style-rent &
+        color: $rent-color
+      .style-commercial &
+        color: $commercial-color
+      .style-prestige &
+        color: $light-grey

@@ -1,0 +1,81 @@
+// default vars
+$default-font-family     : helvetica, arial
+$header-height           : 60px
+$small-section-spacing   : 20px
+$big-section-spacing     : 30px
+$default-section-spacing : $small-section-spacing
+
+// breakpoints
+$mq-larger        : 1120
+$mq-large         : 1024
+$mq-extra-medium  : 971
+$mq-more-medium   : 890
+$mq-medium        : 870
+$mq-extra-small   : 785
+$mq-not-so-small  : 650
+$mq-another-small : 588
+$mq-small-small   : 510
+$mq-small         : 445
+$mq-smaller       : 380
+
+// media-query mixin
+@mixin mq( $m, $point )
+  @media screen and ( $m: ($point / 16) + em )
+    @content
+
+*, :after, :before
+  box-sizing: border-box
+  margin: 0
+  padding: 0
+
+*, body, button, input, textarea, select
+  text-rendering: optimizeLegibility
+  font-size: 100%
+
+html, body, div.ember-view
+  height: 100%
+
+html
+  font-size: 90%
+  +mq(min-width, $mq-smaller)
+    font-size: 100%
+
+body
+  background-color: $bg-color
+  font-family: $default-font-family
+
+.container
+  padding: $header-height+$default-section-spacing 2% 10px
+  max-width: 1200px
+  margin: 0 auto
+  height: auto
+  min-height: 100%
+  overflow: hidden
+
+.position-relative
+  position: relative
+
+.float-right
+  float: right
+
+.float-left
+  float: left
+
+.txt-align-center
+  text-align: center
+
+.clear
+  clear: both
+
+.shadow
+  box-shadow: 0 0 8px $box-shadow-color
+
+.full-width
+  width: 100%
+
+.thin-grey
+  color: $text-grey
+  font-weight: 300
+
+.bold
+  font-weight: 600

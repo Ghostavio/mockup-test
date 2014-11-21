@@ -1,0 +1,155 @@
+.slideshow
+  margin-top: 20px
+  overflow: hidden
+  text-align: center
+  & > .anchor
+    display: none
+  & > .slide-image-list
+    position: relative
+    z-index: 1
+    overflow: hidden
+    & .main-image
+      visibility: hidden
+      & img
+        width: 100%
+    & .img
+      width: 100%
+      height: 100%
+      position: absolute
+      left: 0
+      right: 0
+      top: 0
+      margin: 0 auto
+      opacity: 0
+      z-index: 1
+      transition: opacity 2s ease, transform 2s ease
+      transform: scale(1.5)
+      & img
+        width: 100%
+      // I wanted to keep this more dynamic, but this two images sizes
+      // demands special treatment to fit properly in the container
+      &.num4
+        max-width: 135px
+        +mq(min-width, $mq-smaller)
+          max-width: 175px
+        +mq(min-width, $mq-small-small)
+          max-width: 220px
+        +mq(min-width, $mq-not-so-small)
+          max-width: 290px
+        +mq(min-width, $mq-medium)
+          max-width: 340px
+        +mq(min-width, $mq-large)
+          max-width: 280px
+      &.num7
+        max-width: 310px
+        +mq(min-width, $mq-small)
+          max-width: 340px
+        +mq(min-width, $mq-not-so-small)
+          max-width: 410px
+        +mq(min-width, $mq-extra-small)
+          max-width: 530px
+        +mq(min-width, $mq-large)
+          max-width: 440px
+  & > .thumbs-wrapper
+    font-size: 0
+    text-align: center
+    transition: all .3ms ease .1s
+    margin-top: -85px
+    background: rgba(0,0,0,.4)
+    height: 81px
+    z-index: 1
+    position: relative
+    top: 85px
+    display: none
+    +mq(min-width, $mq-not-so-small)
+      display: block
+    & > .thumb-label
+      position: relative
+      display: inline-block
+      margin: 87px 7.1% 0
+      & > .thumb
+        position: absolute
+        z-index: 1
+        left: -42px
+        top: -69px
+        transition: all .3s
+        margin-top: -12px
+        opacity: 1
+        visibility: visible
+        width: 84px
+        height: 69px
+        cursor: pointer
+        & > img
+          max-width: none
+          width: 84px
+          height: 69px
+  &:hover > .thumbs-wrapper
+    top: 0
+  .arrow-prev, .arrow-next
+    position: absolute
+    top: 50%
+    z-index: 5
+    display: block
+    +mq(min-width, $mq-not-so-small)
+      display: none
+    .arrow-label
+      position: absolute
+      text-decoration: none
+      cursor: pointer
+      opacity: 0
+      z-index: -1
+      padding: 17px
+      margin-top: -40px
+      margin-left: -28px
+      font-size: 3rem
+      transition: color .5s ease-in-out, text-shadow .5s ease-in-out
+      .style-buy &
+        color: $buy-color
+        text-shadow: 2px 2px darken($buy-color, 10%)
+      .style-rent &
+        color: $rent-color
+        text-shadow: 2px 2px darken($rent-color, 10%)
+      .style-commercial &
+        color: $commercial-color
+        text-shadow: 2px 2px darken($commercial-color, 10%)
+      .style-prestige &
+        color: $light-grey
+        text-shadow: 2px 2px darken($light-grey, 10%)
+  .arrow-prev
+    margin-left: 2px
+    left: 45px
+  .arrow-next
+    margin-right: 2px
+    right: 45px
+  & > #slide1:checked ~ .arrow-prev > .arrow-label.num7,
+  & > #slide1:checked ~ .arrow-next > .arrow-label.num2,
+  & > #slide2:checked ~ .arrow-prev > .arrow-label.num1,
+  & > #slide2:checked ~ .arrow-next > .arrow-label.num3,
+  & > #slide3:checked ~ .arrow-prev > .arrow-label.num2,
+  & > #slide3:checked ~ .arrow-next > .arrow-label.num4,
+  & > #slide4:checked ~ .arrow-prev > .arrow-label.num3,
+  & > #slide4:checked ~ .arrow-next > .arrow-label.num5,
+  & > #slide5:checked ~ .arrow-prev > .arrow-label.num4,
+  & > #slide5:checked ~ .arrow-next > .arrow-label.num6,
+  & > #slide6:checked ~ .arrow-prev > .arrow-label.num5,
+  & > #slide6:checked ~ .arrow-next > .arrow-label.num7,
+  & > #slide7:checked ~ .arrow-prev > .arrow-label.num6,
+  & > #slide7:checked ~ .arrow-next > .arrow-label.num1
+    opacity: 1
+    z-index: 5
+  & > #slide1:checked ~ ul > li.num1,
+  & > #slide2:checked ~ ul > li.num2,
+  & > #slide3:checked ~ ul > li.num3,
+  & > #slide4:checked ~ ul > li.num4,
+  & > #slide5:checked ~ ul > li.num5,
+  & > #slide6:checked ~ ul > li.num6,
+  & > #slide7:checked ~ ul > li.num7
+    opacity: 1
+    z-index: 2
+    transform: scale(1)
+  // Fancy background for the special images
+  & > #slide4:checked ~ ul,
+  & > #slide7:checked ~ ul
+    background-color: $box-shadow-color
+    background-image: radial-gradient(circle at 100% 150%, $box-shadow-color 24%, $white 25%, $white 28%, $box-shadow-color 29%, $box-shadow-color 36%, $white 36%, $white 40%, transparent 40%, transparent), radial-gradient(circle at 0    150%, $box-shadow-color 24%, $white 25%, $white 28%, $box-shadow-color 29%, $box-shadow-color 36%, $white 36%, $white 40%, transparent 40%, transparent), radial-gradient(circle at 50%  100%, $white 10%, $box-shadow-color 11%, $box-shadow-color 23%, $white 24%, $white 30%, $box-shadow-color 31%, $box-shadow-color 43%, $white 44%, $white 50%, $box-shadow-color 51%, $box-shadow-color 63%, $white 64%, $white 71%, transparent 71%, transparent), radial-gradient(circle at 100% 50%, $white 5%, $box-shadow-color 6%, $box-shadow-color 15%, $white 16%, $white 20%, $box-shadow-color 21%, $box-shadow-color 30%, $white 31%, $white 35%, $box-shadow-color 36%, $box-shadow-color 45%, $white 46%, $white 49%, transparent 50%, transparent), radial-gradient(circle at 0    50%, $white 5%, $box-shadow-color 6%, $box-shadow-color 15%, $white 16%, $white 20%, $box-shadow-color 21%, $box-shadow-color 30%, $white 31%, $white 35%, $box-shadow-color 36%, $box-shadow-color 45%, $white 46%, $white 49%, transparent 50%, transparent)
+    background-size: 100px 50px
