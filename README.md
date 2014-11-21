@@ -4,15 +4,15 @@ This is a mockup of a real estate website, done using Ember.js.
 
 This is a *Single Page Application*, meaning there's no refresh when changing pages. Javascript needs to be enabled for this app to run. One of the main advantages of using SPA is the user experience on mobile, giving a closer feel of a real native app. Using webviews, or some tools like PhoneGap, it's possible to publish it as an app, of course it wouldn't perform as fast as a native one, but it's something to start until a native app is up and running :)
 
-*Some cool stuff about this app:*
+**Some cool stuff about this app:**
 - Fully responsive, supporting all screen sizes all the way to 320px (non-retina iPhones and older Android phones)
 - CSS-only slideshow, no Javascript necessary for this baby to run :)
 - Off-canvas menu to display sidebar when screen size is too small
 - It's possible to favorite a property, however there's no persistence of data
 
-*Remember, this is not a real app, it's just a mockup done in a couple of days, so it's highly likely to have bugs, if you find any, please let me know.*
+**Remember, this is not a real app, it's just a mockup done in a couple of days, so it's highly likely to have bugs, if you find any, please let me know.**
 
-*TODOS:*
+**TODOS:**
 - Test for accessibility issues on screen readers
 - *Share on Facebook* functionality
 - Transfer images used on the slideshow from the template to the model, and loop through it on the template
