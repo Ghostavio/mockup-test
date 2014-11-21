@@ -124,9 +124,10 @@
   top: 0
   color: $warm-white
   cursor: pointer
+  margin-top: 0
   margin-right: 0
   outline: 0
-  transition: background-color .5s ease-in-out
+  transition: background-color .5s ease-in-out, margin-right .5s ease-in-out
   background-color: $buy-color
   +mq(min-width, $mq-smaller)
     top: -10px
@@ -135,6 +136,7 @@
     top: 5px
     padding: 5px 10px
   +mq(min-width, $mq-large)
+    margin-top: -75px
     margin-right: -75px
     padding: 5px 10px
   .style-rent &

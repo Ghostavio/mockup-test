@@ -1,6 +1,6 @@
 # Mockup-test
 
-This is a mockup of a real estate website, done using Ember.js.
+This is a mockup of a real estate website, built using Ember.js.
 
 This is a *Single Page Application*, meaning there's no refresh when changing pages. Javascript needs to be enabled for this app to run. One of the main advantages of using SPA is the user experience on mobile, giving a closer feel of a real native app. Using webviews, or some tools like PhoneGap, it's possible to publish it as an app, of course it wouldn't perform as fast as a native one, but it's something to start until a native app is up and running :)
 
