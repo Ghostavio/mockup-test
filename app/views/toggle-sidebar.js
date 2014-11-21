@@ -4,6 +4,6 @@ export default Ember.View.extend({
   tagName: 'button',
   classNames: ['toggle-sidebar-button'],
   click: function() {
-    $('.sidebar').toggleClass('show-sidebar');
+    window.$('.sidebar').toggleClass('show-sidebar');
   }
 });
