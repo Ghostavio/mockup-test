@@ -49,16 +49,18 @@
     &:last-child
       margin-bottom: 1.4em
     & .phone-number
-      transition: color .5s ease-in-out
       text-align: center
-      .style-buy &
-        color: $buy-color
-      .style-rent &
-        color: $rent-color
-      .style-commercial &
-        color: $commercial-color
-      .style-prestige &
-        color: $light-grey
+      a
+        text-decoration: none
+        transition: color .5s ease-in-out
+        .style-buy &
+          color: $buy-color
+        .style-rent &
+          color: $rent-color
+        .style-commercial &
+          color: $commercial-color
+        .style-prestige &
+          color: $light-grey
     @media all
       max-height: 50em
       transition: all .5s
