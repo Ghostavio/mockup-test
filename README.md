@@ -31,7 +31,7 @@ You will need the following things properly installed on your computer.
 * `npm install`
 * `bower install`
 
-**If you don't already have ember-cli installed globally in your system, you need to do so, just run `npm install ember-ci -g`**
+**If you don't already have ember-cli installed globally in your system, you need to do so, just run `npm install ember-cli -g`**
 
 ## Running / Development
 
