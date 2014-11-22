@@ -19,9 +19,11 @@ var Property = DS.Model.extend({
   commercial   : DS.attr('boolean'),
   favorite     : DS.attr('boolean'), // this doesn't make sense in a proper structure because it should be user based, but since it's just a mockup let's cheat a little :)
   publishDate  : DS.attr('date'),
-  updatedDate  : DS.attr('string')
+  updatedDate  : DS.attr('string'),
+  images       : DS.hasMany('image', { async: true })
 });
 
+// since we're just testing a mockup without a real API, we're hardcoding the data here
 Property.reopenClass({
   FIXTURES: [
     {
@@ -44,7 +46,8 @@ Property.reopenClass({
       commercial   : false,
       favorite     : false,
       publishDate  : "20/07/2013",
-      updatedDate  : "05/08/2013"
+      updatedDate  : "05/08/2013",
+      images       : [ 1, 2, 3, 4, 5, 6, 7 ]
     },
     {
       id           : 2,
@@ -66,7 +69,8 @@ Property.reopenClass({
       commercial   : false,
       favorite     : false,
       publishDate  : "10/07/2014",
-      updatedDate  : "25/08/2014"
+      updatedDate  : "25/08/2014",
+      images       : [ 1, 2, 3, 4, 5, 6, 7 ]
     },
     {
       id           : 3,
@@ -88,7 +92,8 @@ Property.reopenClass({
       commercial   : true,
       favorite     : false,
       publishDate  : "10/07/2014",
-      updatedDate  : "25/08/2014"
+      updatedDate  : "25/08/2014",
+      images       : [ 1, 2, 3, 4, 5, 6, 7 ]
     }
   ]
 });

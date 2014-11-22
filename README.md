@@ -15,7 +15,7 @@ This is a *Single Page Application*, meaning there's no refresh when changing pa
 **TODOS:**
 - Test for accessibility issues on screen readers
 - *Share on Facebook* functionality
-- Transfer images used on the slideshow from the template to the model, and loop through it on the template
+- ~~Transfer images used on the slideshow from the template to the model, and loop through it on the template~~
 - Add some comments documenting the code
 - Add modal with "sorry this is under development" or something to open when clicking on links or buttons that don't perform any action
 - Open off-canvas sidebar always showing top

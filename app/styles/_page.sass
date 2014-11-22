@@ -170,6 +170,10 @@ $title-outside-margin-top: $big-section-spacing+($title-outside-distance*-1)
         +mq(min-width, $mq-another-small)
           display: none
       // here it comes some fancy stuff :P
+      // we're hiding the last column of every row, except for the last row and
+      // in the line above we're hiding on desktop only the last row containing
+      // the same content of the last column of each row, so this it looks like
+      // the last column becomes an extra row on the table on mobile
       thead:not(:last-child):not(.responsive-cell) th:last-child, tbody:not(:last-child):not(.responsive-cell) td:last-child
         display: none
         +mq(min-width, $mq-another-small)

@@ -13,63 +13,43 @@
     </span>
   </h1>
   <div class="slideshow shadow position-relative">
-    <input name="anchor1" id="slide1" type="radio" class="anchor" autocomplete="off" checked>
-    <input name="anchor1" id="slide2" type="radio" class="anchor" autocomplete="off">
-    <input name="anchor1" id="slide3" type="radio" class="anchor" autocomplete="off">
-    <input name="anchor1" id="slide4" type="radio" class="anchor" autocomplete="off">
-    <input name="anchor1" id="slide5" type="radio" class="anchor" autocomplete="off">
-    <input name="anchor1" id="slide6" type="radio" class="anchor" autocomplete="off">
-    <input name="anchor1" id="slide7" type="radio" class="anchor" autocomplete="off">
+    {{#each img in images}}
+      {{ input
+            class="anchor"
+            name="anchor1"
+            type="radio"
+            autocomplete="off"
+            didInsertElement=increment
+            data-num=_view.contentIndex }}
+    {{/each}}
     <ul class="slide-image-list">
       <div class="main-image"><img src="/assets/images/a.jpg"></div>
-      <li class="num1 img"><img src="/assets/images/a.jpg" alt="Image 1"></li>
-      <li class="num2 img"><img src="/assets/images/b.jpg" alt="Image 2"></li>
-      <li class="num3 img"><img src="/assets/images/c.jpg" alt="Image 3"></li>
-      <li class="num4 img"><img src="/assets/images/d.jpg" alt="Image 4"></li>
-      <li class="num5 img"><img src="/assets/images/e.jpg" alt="Image 5"></li>
-      <li class="num6 img"><img src="/assets/images/f.jpg" alt="Image 6"></li>
-      <li class="num7 img"><img src="/assets/images/g.jpg" alt="Image 7"></li>
+      {{#each img in images}}
+        {{#view "image-wrapper" tagName="li" class="img" data-num=_view.contentIndex}}
+          <img {{ bind-attr src=img.path alt=img.name }}>
+        {{/view}}
+      {{/each}}
     </ul>
     <div class="arrow-prev">
-      <label class="arrow-label num1" for="slide1">{{ fa-icon "chevron-left" }}</label>
-      <label class="arrow-label num2" for="slide2">{{ fa-icon "chevron-left" }}</label>
-      <label class="arrow-label num3" for="slide3">{{ fa-icon "chevron-left" }}</label>
-      <label class="arrow-label num4" for="slide4">{{ fa-icon "chevron-left" }}</label>
-      <label class="arrow-label num5" for="slide5">{{ fa-icon "chevron-left" }}</label>
-      <label class="arrow-label num6" for="slide6">{{ fa-icon "chevron-left" }}</label>
-      <label class="arrow-label num7" for="slide7">{{ fa-icon "chevron-left" }}</label>
+      {{#each img in images}}
+        {{#view "image-wrapper" tagName="label" class="arrow-label" data-num=_view.contentIndex }}
+          {{ fa-icon "chevron-left" }}
+        {{/view}}
+      {{/each}}
     </div>
     <div class="arrow-next">
-      <label class="arrow-label num1" for="slide1">{{ fa-icon "chevron-right" }}</label>
-      <label class="arrow-label num2" for="slide2">{{ fa-icon "chevron-right" }}</label>
-      <label class="arrow-label num3" for="slide3">{{ fa-icon "chevron-right" }}</label>
-      <label class="arrow-label num4" for="slide4">{{ fa-icon "chevron-right" }}</label>
-      <label class="arrow-label num5" for="slide5">{{ fa-icon "chevron-right" }}</label>
-      <label class="arrow-label num6" for="slide6">{{ fa-icon "chevron-right" }}</label>
-      <label class="arrow-label num7" for="slide7">{{ fa-icon "chevron-right" }}</label>
+      {{#each img in images}}
+        {{#view "image-wrapper" tagName="label" class="arrow-label" data-num=_view.contentIndex }}
+          {{ fa-icon "chevron-right" }}
+        {{/view}}
+      {{/each}}
     </div>
     <div class="thumbs-wrapper">
-      <label class="thumb-label num1" for="slide1">
-        <span class="thumb"><img src="/assets/images/a.jpg" alt="Image 1"></span>
-      </label>
-      <label class="thumb-label num2" for="slide2">
-        <span class="thumb"><img src="/assets/images/b.jpg" alt="Image 2"></span>
-      </label>
-      <label class="thumb-label num3" for="slide3">
-        <span class="thumb"><img src="/assets/images/c.jpg" alt="Image 3"></span>
-      </label>
-      <label class="thumb-label num4" for="slide4">
-        <span class="thumb"><img src="/assets/images/d.jpg" alt="Image 4"></span>
-      </label>
-      <label class="thumb-label num5" for="slide5">
-        <span class="thumb"><img src="/assets/images/e.jpg" alt="Image 5"></span>
-      </label>
-      <label class="thumb-label num6" for="slide6">
-        <span class="thumb"><img src="/assets/images/f.jpg" alt="Image 6"></span>
-      </label>
-      <label class="thumb-label num7" for="slide7">
-        <span class="thumb"><img src="/assets/images/g.jpg" alt="Image 7"></span>
-      </label>
+      {{#each img in images}}
+        {{#view "image-wrapper" tagName="label" class="thumb-label" data-num=_view.contentIndex }}
+          <span class="thumb"><img {{ bind-attr src=img.path alt=img.name }}></span>
+        {{/view}}
+      {{/each}}
     </div>
   </div>
   <div class="description position-relative shadow">
