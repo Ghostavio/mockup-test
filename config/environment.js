@@ -11,7 +11,7 @@ module.exports = function(environment) {
       'script-src': "'self' 'unsafe-inline' 'unsafe-eval' www.google-analytics.com pagead2.googlesyndication.com securepubads.g.doubleclick.net pubads.g.doubleclick.net www.googletagservices.com partner.googleadservices.com www.gstatic.com publisherconsole.appspot.com",
       'font-src': "'self' data:",
       'connect-src': "'self'",
-      'img-src': "'self' www.google-analytics.com pagead2.googlesyndication.com tpc.googlesyndication.com csi.gstatic.com",
+      'img-src': "'self' www.google-analytics.com pagead2.googlesyndication.com tpc.googlesyndication.com csi.gstatic.com 38.media.tumblr.com",
       'style-src': "'self' 'unsafe-inline'",
       'frame-src': "googleads.g.doubleclick.net tpc.googlesyndication.com",
       'object-src': "'self' www.gstatic.com",

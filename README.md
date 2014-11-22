@@ -21,7 +21,7 @@ This is a *Single Page Application*, meaning there's no refresh when changing pa
 - Open off-canvas sidebar always showing top
 - Check for possible issues with logo and menu height
 - Improve SASS, make things more modular (especially the accordion)
-- Add <noscript> tag saying this application requires Javascript
+- ~~Add *noscript* tag saying this application requires Javascript~~
 - Maybe play with sending real emails on *Contact By Email* and *Email To a Friend*
 - Maybe generate real PDF with main content on *Print Details in PDF*
 - Browser Test
