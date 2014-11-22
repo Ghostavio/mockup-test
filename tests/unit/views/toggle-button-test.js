@@ -3,7 +3,7 @@ import {
   test
 } from 'ember-qunit';
 
-moduleFor('view:toggle-menu', 'ToggleMenuView');
+moduleFor('view:toggle-button', 'ToggleButtonView');
 
 // Replace this with your real tests.
 test('it exists', function() {

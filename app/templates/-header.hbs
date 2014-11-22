@@ -1,6 +1,8 @@
 <header class="top-header">
   <div class="header-wrapper position-relative">
-    {{#view "toggle-menu"}}{{ fa-icon "bars" }}{{/view}}
+    {{#view "toggle-button" class="toggle-menu-button" data-target=".menu-list" data-class-name="show-menu"}}
+      {{ fa-icon "ellipsis-h" }}
+    {{/view}}
     {{#link-to "index" classNames="logo-link"}}
       <span class="logo"></span>
       <h1>COMPANY NAME & LOGO</h1>
@@ -26,7 +28,9 @@
           <a class="menu-link blog-link">BLOG</a>
         </li>
       </ul>
-      {{#view "toggle-sidebar"}}{{ fa-icon "ellipsis-h" }}{{/view}}
+      {{#view "toggle-button" class="toggle-sidebar-button" data-target=".sidebar" data-class-name="show-sidebar"}}
+        {{ fa-icon "ellipsis-h" }}
+      {{/view}}
     </nav>
   </div>
 </header>
