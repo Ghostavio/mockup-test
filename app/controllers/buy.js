@@ -1,6 +1,12 @@
 import Ember from 'ember';
 
 export default Ember.ObjectController.extend({
+  facebookUrl: function() {
+    return window.location.href;
+  }.property('currentPath'),
+  currentPathDidChange: function() {
+    this.set('facebookUrl', 'https://www.facebook.com/dialog/share?app_id=1542463255991591&display=popup&href=' + window.location.href + '&redirect_uri=' + window.location.href);
+  }.observes('currentPath'),
   increment: function() {
     var num = this.get('data-num') + 1;
     if(this.type === 'radio') {
