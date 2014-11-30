@@ -19,7 +19,7 @@ This is a *Single Page Application*, meaning there's no refresh when changing pa
 - Add some comments documenting the code
 - Add modal with "sorry this is under development" or something to open when clicking on links or buttons that don't perform any action
 - Open off-canvas sidebar always showing top
-- Check for possible issues with logo and menu height
+- ~~Check for possible issues with logo and menu height~~
 - Improve SASS, make things more modular (especially the accordion)
 - ~~Add *noscript* tag saying this application requires Javascript~~
 - Maybe play with sending real emails on *Contact By Email* and *Email To a Friend*
